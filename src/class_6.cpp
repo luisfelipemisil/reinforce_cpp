@@ -2,25 +2,28 @@
 #include <string>
 #include <vector>
 
-class Pessoa{
+// Class person with the caracteristics.
+class Person{
     public:
         std::string person_name;
-        Pessoa(std::string name_choosed) : person_name(name_choosed) {}
+        Person(std::string name_choosed) : person_name(name_choosed) {}
         void falar() const{
             std::cout << "My name is " << person_name << "\n";
         }
 };
 
+
+// Create a vector with 2 persons and then add 3 more people.
 int main(){
     
-    std::vector<Pessoa> grupo = {
-        Pessoa("Madyr"),
-        Pessoa("Luise")
+    std::vector<Person> grupo = {
+        Person("Madyr"),
+        Person("Luise")
     };
 
-    grupo.emplace_back(Pessoa("Luis"));
-    grupo.emplace_back(Pessoa("Felipe"));
-    grupo.emplace_back(Pessoa("Miranda"));
+    grupo.emplace_back(Person("Luis"));
+    grupo.emplace_back(Person("Felipe"));
+    grupo.emplace_back(Person("Miranda"));
 
     for(auto& pessoa : grupo){
         pessoa.falar();
